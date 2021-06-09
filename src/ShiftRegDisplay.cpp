@@ -35,7 +35,7 @@ ShiftRegDisplay::ShiftRegDisplay(byte dataPin, byte latchPin, byte clockPin, byt
 }
 
 void ShiftRegDisplay::showDataMillis(long duration, const byte data[], byte len, alignMode align) {
-	for(long t = millis(); millis() - t < duration;) this->showData(data, len, align);
+  for(long t = millis(); millis() - t < duration;) this->showData(data, len, align);
 }
 
 void ShiftRegDisplay::showData(const byte data[], byte len, alignMode align) {
@@ -47,7 +47,7 @@ void ShiftRegDisplay::showData(const byte data[], byte len, alignMode align) {
 }
 
 void ShiftRegDisplay::showSymbolMillis(long duration, byte symbol, byte pos) {
-	for(long t = millis(); millis() - t < duration;) this->showSymbol(symbol, pos);
+  for(long t = millis(); millis() - t < duration;) this->showSymbol(symbol, pos);
 }
 
 void ShiftRegDisplay::showSymbol(byte symbol, byte pos) {
