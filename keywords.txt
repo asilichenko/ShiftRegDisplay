@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Shift Register Display
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ShiftRegDisplay	KEYWORD1
+sevenSeg	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+showData	KEYWORD2
+showSymbol	KEYWORD2
+CLEAR_BITS	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+MAX_LEN	LITERAL1
+FONT_NUMBER	LITERAL1
+DOT	LITERAL1
+FONT_O_SMALL	LITERAL1
+FULL_DIGIT	LITERAL1
+DIGIT	LITERAL1
+DASH	LITERAL1
+FONT_BIT_MAPPING	LITERAL1
