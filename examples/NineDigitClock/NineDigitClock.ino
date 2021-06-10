@@ -55,8 +55,7 @@ void loop() {
 #define TWICE_A_SEC  (millis() / 500 % 2)
 void receiveData() {
   Time t = clock.getTime();
-  
-  const String day = clock.getDOWStr();
+
   byte d[ShiftRegDisplay::MAX_LEN] = {
     FONT_NUMBER[t.date / 10], FONT_NUMBER[t.date % 10] | DOT,
     FONT_NUMBER[t.dow],
