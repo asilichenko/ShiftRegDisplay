@@ -36,6 +36,7 @@
 </p>
 
 Файл для симуляции в Proteus: https://github.com/asilichenko/ShiftRegDisplay/blob/main/simulation/proteus/NineDigitDisplay.pdsprj
+
 Видео симуляции: https://www.youtube.com/embed/GMqWf4ODv0k
 
 Вход DS регистра U1 подключен непосредственно к Ардуино. Он принимает данные и передает следующему регистру U2. Таким образом, вход DS второго регистра U2 подключен к выводу Q7S первого регистра.
