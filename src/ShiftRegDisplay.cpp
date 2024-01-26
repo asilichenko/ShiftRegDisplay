@@ -53,22 +53,22 @@ void ShiftRegDisplay::showSymbolMillis(long duration, byte symbol, byte pos) {
 void ShiftRegDisplay::showSymbol(byte symbol, byte pos) {
   if(LSBFIRST == this->_bitOrder) pos = ((0 == pos) ? this->MAX_LEN : pos) - 1;
 	
-  // загрузить данные в SH регистр
+  // load data into SH register
   this->_sendData(symbol, bit(pos));
 
-  // загрузить данные из SH регистров в ST регистры
-  digitalWrite(this->_latchPin, LOW);  // подготовка к переносу данных в ST регистр (происходит по фронту сигнала: LOW -> HIGH)
-  digitalWrite(this->_latchPin, HIGH); // вывести данные в ST регистр, переход в Z-состояние (отключить отображение)
+  // load data from SH registers into ST registers
+  digitalWrite(this->_latchPin, LOW);  // prepare to data transfer into ST register (occurs on the signal rising edge: LOW -> HIGH)
+  digitalWrite(this->_latchPin, HIGH); // transfer data into ST register, change state to Z-state (empty display)
 
-  // очистить SH регистр символа и выставить состояние отображения 9-го разряда
+  // clear SH symbol register and set state to display 9th digit
   const bool IS_Q7S_DIGIT = (this->MAX_LEN - 1 == pos);
   this->_sendData(0x00, IS_Q7S_DIGIT ? this->Q7S_BIT : 0x00);  
     
-  digitalWrite(this->_latchPin, LOW);  // снять Z-состояние (отобразить текущий символ)
+  digitalWrite(this->_latchPin, LOW);  // set off Z-state (display current symbol)
     
-  delay(1); // минимальная задержка, чтобы символ успел отобразится. Значение задержки > 2мс приводит к заметному мерцанию
+  delay(1); // minimum delay, to allow the symbol to be displayed. Delay value > 2ms leads to noticable flickering
 
-  digitalWrite(this->_latchPin, HIGH); // перевести в Z-состояние (убрать отображение), чтобы все разряды горели равномерно 
+  digitalWrite(this->_latchPin, HIGH); // set state to Z-state (disable display), so that all segments are illuminated evenly
 }
 
 void ShiftRegDisplay::_sendData(byte symbol, byte pos) {
