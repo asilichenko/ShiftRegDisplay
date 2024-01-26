@@ -1,7 +1,7 @@
 /*
     SevenSegmentFonts.h - Fonts definition for 7-Segment display.
 
-    Copyright (C) 2021 Alexey Silichenko (a.silichenko@gmail.com)
+    Copyright (C) 2021-2024 Oleksii Sylichenko (a.silichenko@gmail.com)
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
